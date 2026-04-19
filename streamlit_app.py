@@ -3,10 +3,11 @@ from email.mime.multipart import MIMEMultipart
 from email.mime.text import MIMEText
 
 import streamlit as st
-from scraper import format_output, scrape_all
+from scraper import HUB_URL, format_output, scrape_all
 
 st.set_page_config(page_title="Telegraph India Racing Tips", layout="centered")
 st.title("Telegraph India Racing Tips")
+st.caption(f"Source / QA: [telegraphindia.com/sports/horse-racing]({HUB_URL})")
 
 if st.button("Scrape Today's Tips", type="primary"):
     with st.spinner("Scraping Telegraph India..."):
