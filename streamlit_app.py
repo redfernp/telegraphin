@@ -21,7 +21,7 @@ if st.button("Scrape Today's Tips", type="primary"):
         for line in output.split("\n"):
             stripped = line.rstrip()
             is_meeting = bool(stripped) and stripped == stripped.upper() and not stripped.startswith("R")
-            is_tagged = stripped.endswith(" NAP") or stripped.endswith(" NB")
+            is_tagged = stripped.endswith(" (NAP)") or stripped.endswith(" (NB)")
             if is_meeting or is_tagged:
                 html_lines.append(f"<strong>{line}</strong>")
             else:

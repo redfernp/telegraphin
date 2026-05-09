@@ -232,9 +232,9 @@ def format_output(meetings: list[Meeting]) -> str:
         )
         tag_by_race: dict[int, str] = {}
         if ranked:
-            tag_by_race[ranked[0].race_number] = "NAP"
+            tag_by_race[ranked[0].race_number] = "(NAP)"
         if len(ranked) > 1:
-            tag_by_race[ranked[1].race_number] = "NB"
+            tag_by_race[ranked[1].race_number] = "(NB)"
 
         for pick in meeting.picks:
             tag = tag_by_race.get(pick.race_number, "")
